@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 
   function fillData (projectArray) {
-    var sizes = [4, 4, 3, 3, 4];
+    var sizes = [6, 6, 4, 4, 4];
     var i = 0;
     projectArray.forEach(function(project) {
       $("#row_1").prepend("<li class='project col-" + sizes[i] + "'" +  "id='project-" + i + "'>Here is some text</li>");
