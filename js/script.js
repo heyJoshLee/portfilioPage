@@ -38,15 +38,15 @@ $(document).ready(function() {
     });
   };
 
+  // Fills page with data
   fillData(globals.projects);
 
 
-  // close info box
+  // Close info box
   $("#close-info-box").on("click", function() {
     $("#info-box").fadeOut("slow");
     // Beacuse .info-skills are appended they must be cleared. Other wise they will keep being added
     $(".info-skills-section").html(" ");
-
   });
 
   // Populate and open fadeIn #info-box
@@ -57,7 +57,7 @@ $(document).ready(function() {
     $("#info-box .info-github").html("<a href='" + currentProject.github + "' class='github-button' target='_blank'> Github </a>")
     $("#info-box .info-desc").html(currentProject.description)
 
-    // make a tiny div for each skill
+    // Make a tiny div for each skill
     var i = 0; 
     for(i; i < currentProject.skills.length; i += 1) {
       $(".info-skills-section").append("<span class='info-skills'>" + currentProject.skills[i] + "</span>")
@@ -76,7 +76,6 @@ $(document).ready(function() {
 
       var projectIndex = this.id.slice(-1);
 
-
       currentProject = globals["projects"][projectIndex];
       $(this).html("<div class='info'><div class='title'>" + currentProject["title"] + "</div></div>");
       $(this).removeClass("sepia-filter");
@@ -93,6 +92,18 @@ $(document).ready(function() {
 
 
   });
+
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+    var fired = false;
+    console.log("scrolled!");
+     //>=, not <=
+    if (scroll >= 500 && fired === false) {
+        //clearHeader, not clearheader - caps H
+        $("#projects-header").addClass("fadeOutDown");
+        fired = true;
+    }
+}); //missing );
 
 
 
