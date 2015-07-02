@@ -104,7 +104,7 @@ INFO
 #info Box
 *********/
 
-.info-box {
+#info-box {
   width: 100%;
   height: 100%;
   background-color: snow;
@@ -114,18 +114,18 @@ INFO
   text-align: center;
 }
 
-.info-box img {
+#info-box img {
   width: 100%;
   max-width: 400px;
   height: 35%;
   max-height: 400px;
 }
 
-.info-box > div {
+#info-box > div {
   margin-top: 15px;
 }
 
-.info-box .info-skills {
+#info-box .info-skills {
   background: lightgrey;
   padding: 5px;
   border-radius: 10%;

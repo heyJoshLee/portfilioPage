@@ -1,5 +1,6 @@
  var globals = {projects:  [],
                 oldHTML: ""};
+var currentProject;
 $(document).ready(function() {
  
 
@@ -33,22 +34,38 @@ $(document).ready(function() {
 
   fillData(globals.projects);
 
+
+  // close info box
   $("#close-info-box").on("click", function() {
-    console.log("cliecked");
-    $(".info-box").fadeOut("slow");
+    $("#info-box").fadeOut("slow");
   });
 
+  $(".project").on("click", function() {
+    console.log("hi");
+    $("#info-box .info-title").html(currentProject.title);
+
+    $("#info-box").fadeIn("slow");
+
+
+
+
+
+  });
 
   $(".project").hover(
     function() {
       // mouse over
       globals.oldHTML = $(this).html();
       var projectIndex = this.id.slice(-1);
-      var projectTitle = globals["projects"][projectIndex]["title"];
-      console.log(projectTitle);
-      $(this).html("<div class='info'><div class='title'>" + projectTitle + "</div></div>");
+      currentProject = globals["projects"][projectIndex];
+      console.log(currentProject);
+      $(this).html("<div class='info'><div class='title'>" + currentProject["title"] + "</div></div>");
       $(this).toggleClass("fade");
       $(this).toggleClass("clickable");
+
+
+
+
 
     },
     function() {
