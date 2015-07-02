@@ -25,13 +25,18 @@ $(document).ready(function() {
     var sizes = [6, 6, 4, 4, 4];
     var i = 0;
     projectArray.forEach(function(project) {
-      $("#row_1").prepend("<li class='project col-" + sizes[i] + "'" +  "id='project-" + i + "'>Here is some text</li>");
+      $("#row_1").prepend("<li class='project col-" + sizes[i] + "'" +  "id='project-" + i + "'></li>");
       $("#row_1 li:first-child").css("background-image", "url(" + project["img"] + ")");
       i += 1; 
     });
   };
 
   fillData(globals.projects);
+
+  $("#close-info-box").on("click", function() {
+    console.log("cliecked");
+    $(".info-box").fadeOut("slow");
+  });
 
 
   $(".project").hover(
@@ -43,10 +48,14 @@ $(document).ready(function() {
       console.log(projectTitle);
       $(this).html("<div class='info'><div class='title'>" + projectTitle + "</div></div>");
       $(this).toggleClass("fade");
+      $(this).toggleClass("clickable");
+
     },
     function() {
       $(this).html(globals.oldHTML);
       $(this).toggleClass("fade");
+      $(this).toggleClass("clickable");
+
 
   });
 
