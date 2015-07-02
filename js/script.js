@@ -16,14 +16,18 @@ $(document).ready(function() {
   };
 
   new Project("Penguin Game", "Click the penguins", ["HTML", "CSS", "JS", "Rocket Science"],"Penguingame.com","./img/find_the_penguins.png","Here is is");
-  new Project("Colbert Button", "Click to view a random video from Stephen Colbert", ["HTML", "CSS", "JS"],"colbert_button.com","./img/colbert_button.png","github.com");
+  new Project("Colbert Button", "Click to view a random video from Stephen Colbert", ["HTML", "CSS", "JS"],"http://htmlpreview.github.io/?https://github.com/jleewebdev/Colbert-button/blob/master/index.html","./img/colbert_button.png","https://github.com/jleewebdev/Colbert-button");
   new Project("Codepad", "Write and run HTML, CSS and JS from your browser.", ["HTML", "CSS", "JS"],"Codepad.com","./img/codepad.png","github/codepad");
-  new Project("Penguin Game4", "Click the penguins", ["HTML", "CSS", "JS"],"Penguingame.com","./img/find_the_penguins.png","Here is is");
-  new Project("Penguin Game5", "Click the penguins", ["HTML", "CSS", "JS"],"Penguingame.com","./img/find_the_penguins.png","Here is is");
-
+  new Project("Color Roulette", "Generate random colors and color palettes.", ["HTML", "CSS", "JS"],"https://github.com/jleewebdev/Color-Roulette","./img/colorButtonScreen.png","https://github.com/jleewebdev/Color-Roulette");
+  new Project("Fourside", "Earthbound fan site", ["HTML", "CSS"],"http://htmlpreview.github.io/?https://github.com/jleewebdev/Fourside/blob/master/index.html","./img/foursideScreen.png","https://github.com/jleewebdev/Fourside");
+  new Project("Hex Clock", "Shows color based on time", ["HTML", "CSS", "JS"], "http://htmlpreview.github.io/?https://github.com/jleewebdev/Hex-Clock/blob/master/index.html", "./img/hex_clock.png", "https://github.com/jleewebdev/Hex-Clock");
+  new Project("The Music Machine", "Create music loops in your browser with five differnt instruments", ["HTML", "CSS", "JS", "howler.js"], "https://github.com/jleewebdev/musicalSquares", "./img/music_machine.png", "https://github.com/jleewebdev/musicalSquares");
+  new Project("Salary Compare", "Compare your slary with some US celebrities.", ["HTML", "CSS", "JS", "jQuery"], "https://github.com/jleewebdev/compareSalary", "./img/salary_compare.png", "https://github.com/jleewebdev/compareSalary");
+  new Project("Omni Electric", "I saw this website and decided to recreate it using HTML / CSS. This was one of my first projects", ["HTML", "CSS"], "http://htmlpreview.github.io/?https://github.com/jleewebdev/Omni---Electric-CSS-copy/blob/master/index.html", "./img/omniScreen.png", "https://github.com/jleewebdev/Omni---Electric-CSS-copy");
+  new Project("Blackjack", "Play blackjack the blackjack", ["HTML", "CSS", "Bootstrap", "Ruby", "Sinatra"], "http://blackjack-jl.herokuapp.com/", "./img/blackjack.png", "https://github.com/jleewebdev/tl-blackjack-webapp");
 
   function fillData (projectArray) {
-    var sizes = [6, 6, 4, 4, 4];
+    var sizes = [6, 6, 4, 4, 4, 4, 4, 4, 4, 4];
     var i = 0;
     projectArray.forEach(function(project) {
       $("#row_1").prepend("<li class='project col-" + sizes[i] + "'" +  "id='project-" + i + "'></li>");
@@ -47,8 +51,8 @@ $(document).ready(function() {
   $(".project").on("click", function() {
     $("#info-box .info-title").html("<h2>" + currentProject.title + "</h2>");
     $("#info-box #info-img").attr("src", currentProject.img);
-    $("#info-box .info-url").html("<a href='" + currentProject.url + "'>" + currentProject.url + "</a>");
-    $("#info-box .info-github").html("<a href='" + currentProject.github + "' class='github-button'> Github </a>")
+    $("#info-box .info-url").html("<a href='" + currentProject.url + "' target='_blank'>" + currentProject.url + "</a>");
+    $("#info-box .info-github").html("<a href='" + currentProject.github + "' class='github-button' target='_blank'> Github </a>")
     $("#info-box .info-desc").html(currentProject.description)
 
     // make a tiny div for each skill
@@ -62,9 +66,15 @@ $(document).ready(function() {
 
   $(".project").hover(
     function() {
+      // Fix for projects that have 2 digit ID numbers
       // mouse over
+
+      // Save HTML to repopulate
       globals.oldHTML = $(this).html();
+
       var projectIndex = this.id.slice(-1);
+
+
       currentProject = globals["projects"][projectIndex];
       $(this).html("<div class='info'><div class='title'>" + currentProject["title"] + "</div></div>");
       $(this).toggleClass("fade");

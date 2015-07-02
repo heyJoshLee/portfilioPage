@@ -67,9 +67,6 @@ ul#projects {
   padding: 0;
 }
 
-.fade {
-  opacity: 0.3;
-}
 
 #projects {
   text-align: left;
@@ -99,7 +96,9 @@ INFO
   color: snow;
   margin-top: 30%;
   padding-top: 15px;
-    opacity: 1;
+  border: 1px solid snow;
+  -webkit-boxsizing: border-box;
+  -moz-boxsizing: border-box;
 
 }
 
