@@ -39,11 +39,22 @@ $(document).ready(function() {
       // mouse over
       globals.oldHTML = $(this).html();
       var projectIndex = this.id.slice(-1);
-      $(this).html(globals["projects"][projectIndex]["title"]);
+      var projectTitle = globals["projects"][projectIndex]["title"];
+      console.log(projectTitle);
+      $(this).html("<div class='info'><div class='title'>" + projectTitle + "</div></div>");
+      $(this).toggleClass("fade");
     },
     function() {
       $(this).html(globals.oldHTML);
+      $(this).toggleClass("fade");
+
   });
+
+
+//<div class="info">
+  //          <div class="title">Name</div>
+    //    </div>
+
 
 
   //$(".project").mouseenter(function() 
