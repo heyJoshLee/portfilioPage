@@ -13,9 +13,6 @@ html, body {
   text-align: center;
 }
 
-#projects {
-  text-align: left;
-}
 
 .row {
   width: 100%;
@@ -44,23 +41,13 @@ html, body {
   width: 50%;
 }
 
-.project:hover {
-  opacity: 50%;
-}
-
-.project {
-  border: 2px solid black;
-  background-size: cover; 
-  background-repeat: no-repeat;
-  moz-box-sizing: border-box;
-}
 
 
 
-.hidden {
-  display: none;
-}
 
+/*************
+.project
+*************/
 ul#projects li {
   display: inline-block;
 }
@@ -73,7 +60,21 @@ ul#projects {
   opacity: 0.3;
 }
 
+#projects {
+  text-align: left;
+}
 
+.project:hover {
+  opacity: 50%;
+  border: 2px solid black;
+}
+
+.project {
+  background-size: cover; 
+  background-repeat: no-repeat;
+  vertical-align: top;
+  box-sizing: border-box;
+}
 
 
 /************

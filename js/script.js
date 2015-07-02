@@ -40,8 +40,7 @@ $(document).ready(function() {
       globals.oldHTML = $(this).html();
       var projectIndex = this.id.slice(-1);
       var projectTitle = globals["projects"][projectIndex]["title"];
-      console.log(projectTitle);
-      $(this).html("<div class='info'><div class='title'>" + projectTitle + "</div></div>");
+      $(this).html("<div class='info'><div class='title>" + projectTitle + "</div></div>");
       $(this).toggleClass("fade");
     },
     function() {
