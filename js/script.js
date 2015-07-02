@@ -26,11 +26,13 @@ $(document).ready(function() {
   new Project("Omni Electric", "I saw this website and decided to recreate it using HTML / CSS. This was one of my first projects", ["HTML", "CSS"], "http://htmlpreview.github.io/?https://github.com/jleewebdev/Omni---Electric-CSS-copy/blob/master/index.html", "./img/omniScreen.png", "https://github.com/jleewebdev/Omni---Electric-CSS-copy");
   new Project("Blackjack", "Play blackjack the blackjack", ["HTML", "CSS", "Bootstrap", "Ruby", "Sinatra"], "http://blackjack-jl.herokuapp.com/", "./img/blackjack.png", "https://github.com/jleewebdev/tl-blackjack-webapp");
 
+
+  // Fill page with projects
   function fillData (projectArray) {
     var sizes = [6, 6, 4, 4, 4, 4, 4, 4, 4, 4];
     var i = 0;
     projectArray.forEach(function(project) {
-      $("#row_1").prepend("<li class='project col-" + sizes[i] + "'" +  "id='project-" + i + "'></li>");
+      $("#row_1").prepend("<li class='sepia-filter project col-" + sizes[i] + "'" +  "id='project-" + i + "'></li>");
       $("#row_1 li:first-child").css("background-image", "url(" + project["img"] + ")");
       i += 1; 
     });
@@ -77,14 +79,16 @@ $(document).ready(function() {
 
       currentProject = globals["projects"][projectIndex];
       $(this).html("<div class='info'><div class='title'>" + currentProject["title"] + "</div></div>");
-      $(this).toggleClass("fade");
+      $(this).removeClass("sepia-filter");
+      $(this).addClass("no-filter");
       $(this).toggleClass("clickable");
     },
     // mouse out
     function() {
       // Replace HTML to previous state. Bugs out without this
       $(this).html(globals.oldHTML);
-      $(this).toggleClass("fade");
+      $(this).removeClass("no-filter");
+      $(this).addClass("sepia-filter");
       $(this).toggleClass("clickable");
 
 

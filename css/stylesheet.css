@@ -76,7 +76,17 @@ ul#projects {
   opacity: 50%;
 }
 
+.sepia-filter {
+    filter: sepia(1);
+    -webkit-filter: sepia(1);
+    transition: 2s; 
+}
 
+.no-filter {
+  -webkit-filter: none;
+  filter: none;
+  transition: 2s;
+}
 /************
 INFO
 ************/
