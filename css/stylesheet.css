@@ -1,11 +1,26 @@
 /* CSS */
 
+#josh-lee h1 {
+  width: 100%;
+  height: 300px;
+  font-size: 200px;
+  border: 2px solid white;
+  font-weight: 100;
+}
+
+#josh-lee {
+  margin-top: -150px;
+}
 
 
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
+}
+
+body {
+  background: url("img/bkg.png");
 }
 
 #page-container {
@@ -51,8 +66,7 @@ html, body {
 
 #main {
   width: 100%;
-  height: 500px;
-  background-color: gray;
+  height: 200px;
 }
 
 .badge {
