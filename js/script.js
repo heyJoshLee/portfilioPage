@@ -108,10 +108,6 @@ $(document).ready(function() {
 });
 
 
-$('#josh-lee').textHoler({
-      background: "http://cdn.makeagif.com/media/7-02-2015/gZbolb.gif"
-    });
-
 
 
 
