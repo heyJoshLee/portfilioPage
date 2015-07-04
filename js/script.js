@@ -105,6 +105,33 @@ $(document).ready(function() {
     }
 }); //missing );
 
+    function fadeInJoshHeader () {
+      // Add spans that contain one letter each
+      var name = "Josh Lee";
+      name = name.split("");
+      var i = 0;
+      for(i; i < name.length; i += 1) {
+        $("#josh-h1").append("<span id='josh-h1-" + i + "' class='header-letters'>" + name[i] + "</span>");
+      };
+
+      // $(".header-letters").hide();
+
+      var useNum = 0;
+      var spanToAdd;
+      var numberOrder = [5, 3, 1, 0, 7, 2, 6];
+        
+        function timeout() {
+            setTimeout(function() {
+              spanToAdd = "#josh-h1-" + numberOrder[useNum];
+              
+              $(spanToAdd).fadeTo(800, 1);
+              useNum += 1;
+              timeout();
+            }, 400);
+          }
+          timeout();
+    };
+    fadeInJoshHeader();
 });
 
 

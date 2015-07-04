@@ -71,6 +71,10 @@ header {
   background-color: red;
 }
 
+.header-letters {
+  opacity: 0;
+}
+
 /********
 #main
 ********/
